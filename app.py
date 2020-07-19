@@ -6,6 +6,7 @@
 import dash
 import dash_core_components as dcc
 import dash_html_components as html
+import dash_bootstrap_components as dbc
 from dash.dependencies import Input, Output
 import plotly.express as px
 import pandas as pd
@@ -23,7 +24,7 @@ colors = {
 df = pd.read_csv('data/datasets_One_Year_of_FitBitChargeHR_Data.csv')
 df['Date'] = pd.to_datetime(df['Date'], dayfirst=True)
 df['Date'] = pd.to_datetime(df['Date'],format='%d-%m-%Y')
-df['Date_only'] = pd.to_datetime(df['Date']).dt.day
+df['Day of month'] = pd.to_datetime(df['Date']).dt.day
 
 df['Calories'] = df['Calories'].apply(lambda x: x*1000)
 df[['Distance']] = df[['Distance']].apply(lambda x: x.astype(str).str.replace(",",".").astype(float) * 0.621371)
@@ -69,17 +70,17 @@ stacked = df_bar.stack().reset_index().rename(columns={
 })
 
 
-# stacked['Activity'] = stacked['Activity'].map(lambda x: x.lstrip('_').rstrip('Minutesof'))
 stacked['Activity'] = stacked['Activity'].str.replace('Minutes_of_', '')
 
 
-barfig = px.scatter(stacked, x="Date", y = "Minutes", color="Activity")
+barfig = px.scatter(stacked, x="Date", y = "Minutes", color="Activity",
+                    title="Time spent on each activity type over time")
 #fig = px.bar(df, x="Fruit", y="Amount", color="City", barmode="group")
 
-linefig = px.line(df, x='Date', y='Calories')
+linefig = px.line(df, x='Date', y='Calories', title="Calories consumed over time")
 
 
-boxplot = px.box(df, x ="Date_only", y="Calories", title="Calories Consumed by day of month")
+boxplot = px.box(df, x ="Day of month", y="Calories", title="Calories consumed by day of month")
 
 linefig.update_layout(
     plot_bgcolor=colors['background'],
@@ -99,7 +100,8 @@ boxplot.update_layout(
     font_color=colors['text']
 )
 
-
+data = "The dataset comes from "
+motivation="Collateral health impacts of covid-19"
 
 app.layout = html.Div(style={'backgroundColor': colors['background']}, children=[
     html.H1(
@@ -110,10 +112,24 @@ app.layout = html.Div(style={'backgroundColor': colors['background']}, children=
         }
     ),
 
-    html.Div(children='Analyze your own historic trends', style={
+    html.H4(
+        children="Descriptive, not Prescriptive Healthcare",
+        style={
+            'textAlign': 'center',
+            'color': colors['text']
+        }
+    ),
+
+    html.Div(children='Don\'t let algorithms decide for you, '
+                      'gain control over your lifestyle based on data we expose',
+             style={
         'textAlign': 'center',
         'color': colors['text']
     }),
+
+
+
+
 
     # html.Label('Dropdown'),
     #     dcc.Dropdown(
@@ -143,9 +159,22 @@ app.layout = html.Div(style={'backgroundColor': colors['background']}, children=
 
     dcc.Graph(
         id="boxplot",
-        figure=boxplot)
+        figure=boxplot),
+
+    html.Div(children='The data used comes from https://www.kaggle.com/alketcecaj/one-year-of-fitbit-chargehr-data'
+                      ,
+             style={
+            'textAlign': 'left',
+            'color': colors['text']
+    }),
+
+
+
+
+
 
 ])
+
 
 # # Update Time Series
 # @app.callback(Output('timeseries', 'figure'),
