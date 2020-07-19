@@ -1,4 +1,6 @@
 # RemindMe: HackDTechTeamQQ
+![logo](https://github.com/YunyaoZhu/HackDTechTeamQQ/blob/master/assets/RemindMelogo.png?raw=true)
+
 
 ## TL;DR
 Personalized WFH Wellbeing Assistant - built for HackDTech 2020 
@@ -12,6 +14,9 @@ With Work From Home (WFH) being the new normal, the world is experiencing anothe
 1) send personalized reminders to your desktop, mobile devices and watch 
 2) show your analytics dashboard, which consists of your historic data and how active you're compared to the rest of population in your health condition group
 3) (if user consents) collect data about their lifestyle habits to support long-term study 
+
+For a preview of our product 
+![preview](https://github.com/YunyaoZhu/HackDTechTeamQQ/blob/master/assets/RemindMe_preview.png?raw=true)
 
 ## How we built it 
 _Backend_: the analytical web application was built with Python's Dash framework and Plotly library for interactive visualizations. The web app was then deployed with Heroku. 
