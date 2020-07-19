@@ -35,4 +35,4 @@ Figuring out what's feasible in 24-hour, collaborating remotely, iterating on id
 ## What's next for RemindMe 
 Once we have enough user data, we can calculate population summary statistics for each age range/gender/physical activity/BMI combination, and show users where they lie on the distribution. As developers, we believe that we shouldn't prescribe users with recommendations. Instead, we should empower users with as much interpretable data as possible to inform their decisions. 
 
-
+![teamPhoto](https://github.com/YunyaoZhu/HackDTechTeamQQ/blob/master/assets/QQ.png?raw=true)
