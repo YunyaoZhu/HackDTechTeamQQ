@@ -1,5 +1,5 @@
 # RemindMe: HackDTechTeamQQ
-![logo](https://github.com/YunyaoZhu/HackDTechTeamQQ/blob/master/assets/Logo.png?raw=true)
+![logo](https://github.com/YunyaoZhu/HackDTechTeamQQ/blob/master/assets/Logo.jpg?raw=true)
 
 
 ## TL;DR
