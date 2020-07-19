@@ -16,7 +16,8 @@ With Work From Home (WFH) being the new normal, the world is experiencing anothe
 3) (if user consents) collect data about their lifestyle habits to support long-term study 
 
 For a preview of our product 
-![preview](https://github.com/YunyaoZhu/HackDTechTeamQQ/blob/master/assets/RemindMe_preview.jpeg?raw=true)
+![d-preview](https://github.com/YunyaoZhu/HackDTechTeamQQ/blob/master/assets/Desktop.png?raw=true)
+![m-preview](https://github.com/YunyaoZhu/HackDTechTeamQQ/blob/master/assets/Mobile.png?raw=true)
 
 ## How we built it 
 _Backend_: the analytical web application was built with Python's Dash framework and Plotly library for interactive visualizations. The web app was then deployed with Heroku. 
