@@ -22,7 +22,7 @@ For a preview of our product
 ## How we built it 
 _Backend_: the analytical web application was built with Python's Dash framework and Plotly library for interactive visualizations. The web app was then deployed with Heroku. 
 
-_Frontend_: 
+_Frontend_: we used Figma to design the web app, mobile app, and watch app. 
 
 ## Challenges we ran into 
 _Availability of time series data_: we struggled to find open, free time-series data that record an individual's activity level and intake. Going forward, we can make use of external APIs like Google Fit APIs to record user's activities, as well as Fitbit and AppleWatch APIs to gather wearable technology data. 
